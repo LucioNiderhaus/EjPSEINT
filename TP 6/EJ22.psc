@@ -1,0 +1,33 @@
+Algoritmo sin_titulo
+	DIMENSION VENTAS[15]
+	TOTAL = 0
+	Para I<-0 Hasta 14 Con Paso 1 Hacer
+		VENTAS[I] = 0
+	FinPara
+	Escribir "INGRESAR NUMERO DE VENDEDOR: "
+	Leer NVENDEDOR
+	Mientras NVENDEDOR!=0 Hacer
+		Escribir "INGRESAR IMPORTE DE LA VENTA: "
+		Leer IMPORTE
+		VENTAS[NVENDEDOR-1] = VENTAS[NVENDEDOR-1]+IMPORTE
+		Escribir "INGRESAR NUMERO DE VENDEDOR: "
+		Leer NVENDEDOR
+	FinMientras
+	Para C<-0 Hasta 14 Con Paso 1 Hacer
+		Si C==0 Entonces
+			MAYORVENTA = VENTAS[C]
+			MAYORVENDEDOR = C+1
+		SiNo
+			Si VENTAS[C]>MAYORVENTA Entonces
+				MAYORVENTA = VENTAS[C]
+				MAYORVENDEDOR = C+1
+			FinSi
+		FinSi
+		Si VENTAS[C]==0 Entonces
+			Escribir C+1," NO REALIZO VENTAS"
+		FinSi
+		TOTAL = TOTAL + VENTAS[C]
+	FinPara
+	Escribir "EL VENDEDOR QUE MAS VENDIO ES: ",MAYORVENDEDOR
+	Escribir "EL TOTAL RECAUDADO POR LA EMPRESA CON TODAS LAS VENTAS EFECTUADAS ES DE: ",TOTAL
+FinAlgoritmo
